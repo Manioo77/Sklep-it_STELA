@@ -11,25 +11,73 @@ html {
 body {
 	background-color: #fefefe;
 	overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
+}
+
+img {
+	max-width: 100%;
+	cursor: pointer;
+	transition: opacity 0.5s;
+	position: relative;
+	border: 5px solid white;
+}
+
+img:hover {
+	opacity: 0.8;
 }
 
 :root {
 }
 
+/* ASIDE */
+
+.advertisement {
+	position: relative;
+	width: 100%;
+	background-color: #82ae68;
+}
+
+.advertisement__text {
+	font-size: 16px;
+	color: #fff;
+	display: flex;
+	letter-spacing: 3px;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+}
+
+.advertisement__closeBtn {
+	position: absolute;
+	padding: 5px;
+	top: 0;
+	right: 0;
+	font-size: 20px;
+	background-color: #82ae68;
+	border: none;
+	cursor: pointer;
+}
+
+.advertisement__closeBtn:hover {
+	color: #fff;
+}
+
+/* NAV */
+
 .nav {
-	height: 80px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	height: 100px;
 }
 
 .nav__leftSide {
-	width: 100%;
-	max-width: 800px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
+	max-width: 800px;
 	list-style: none;
 }
 
@@ -42,54 +90,87 @@ body {
 }
 
 .nav__centerSide--img {
-	width: 50%;
+	width: 70%;
 }
 
 .nav__container--element {
-	padding: 0 40px;
-	font-size: 2em;
+	position: relative;
+	font-size: 2.4em;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 
 .nav__container--element a {
+	padding: 40px;
 	text-decoration: none;
-	color: black;
+	color: #4a4a4a;
+}
+
+.nav__container--element a:hover {
+	color: orange;
+}
+
+.nav__container--element a {
+	transition: 0.5s;
+}
+
+.nav__container--element::after {
+	content: '';
+	position: absolute;
+	height: 3px;
+	width: 0;
+	left: 25%;
+	bottom: -10px;
+	transition: 0.5s;
+	background-color: orange;
+}
+
+.nav__container--element:hover::after {
+	width: 50%;
 }
 
 .nav__rightSide {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
+	width: 90%;
 	max-width: 800px;
 }
 
 .nav__rightSide i {
 	padding: 40px;
 	font-size: 30px;
+	transition: color 0.3s;
+	cursor: pointer;
+}
+
+.nav__rightSide i:hover {
+	color: orange;
 }
 
 /* HEADER */
 
 .header {
 	display: flex;
-	height: 100vh;
 	width: 100vw;
+	max-height: 1200px;
 }
 
 .header__leftSide {
-	width: 50vw;
+	max-width: 50%;
 }
 
 .header_rightSide {
-	display: flex;
-	flex-direction: column;
+	max-width: 50%;
 }
 
-.header_rightSide--up {
-	display: flex;
+.header__leftSide--img,
+.header__rightSide--img {
+	height: 100%;
 }
 
-.header__leftSide--img {
+.header_rightSide--up,
+.header_rightSide--down {
+	display: flex;
+	width: 50%;
 }
