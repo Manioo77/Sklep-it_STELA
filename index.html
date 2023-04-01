@@ -23,6 +23,12 @@
         <button class="advertisement__closeBtn">x</button>
     </aside>
 
+
+    <div class="cookie__box">
+        <p>Nasza strona korzysta z ciasteczek!</p>
+        <button class="cookie__box--btn">Akceptuj 🍪!</button>
+    </div>
+
     <nav class="nav">
         <ul class="nav__leftSide">
             <li class="nav__container--element"><a href="">Sklep</a></li>
@@ -35,10 +41,43 @@
         <div class="nav__rightSide">
             <i class="fa-solid fa-magnifying-glass"></i>
             <i class="fa-regular fa-user"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="nav__rightSide--product">
+                <p>0</p>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
         </div>
     </nav>
+
     <header class="header">
+
+        <div class="container">
+            <div class="container__profile">
+                <div class="container__profile--close">
+                    <p>x</p>
+                </div>
+                <div class="container__profile--title">
+                    <p>Zaloguj się</p>
+                </div>
+                <div class="container__inputs">
+                    <div class="container__inputsLeft">
+                        <p class="container__inputsLeft--txt">Zaloguj się</p>
+                        <form action="">
+                            <label class="container__inputsLeft--labelEmail" for="email">Email*</label>
+                            <input id="email" class="container__inputsLeft--email" type="email" required>
+
+                            <label class="container__inputsLeft--labelPassword" for="password">Hasło*</label>
+                            <input id="password" class="container__inputsLeft--password" type="password" required>
+                            <input type="submit" class="container__inputsLeft--btn" value="Zaloguj się"></input>
+                        </form>
+                    </div>
+                    <div class="container__inputsRight">
+                        <p class="container__inputsRight--txt">NIE JESTEŚ ZAREJESTROWANYM KLIENTEM?</p>
+                        <button class="container__inputsRight--btn">Zarejestuj się</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="header__leftSide">
             <img class="header__leftSide--img" src="images/foto3.png" alt="">
         </div>

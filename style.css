@@ -12,6 +12,8 @@ body {
 	background-color: #fefefe;
 	overflow-x: hidden;
 	font-family: 'Roboto', sans-serif;
+	letter-spacing: 2px;
+	min-height: 300vh;
 }
 
 img {
@@ -24,6 +26,14 @@ img {
 
 img:hover {
 	opacity: 0.8;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: flex;
 }
 
 :root {
@@ -65,6 +75,10 @@ img:hover {
 /* NAV */
 
 .nav {
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+	background-color: #fff;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -130,11 +144,31 @@ img:hover {
 }
 
 .nav__rightSide {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 90%;
 	max-width: 800px;
+}
+
+.nav__rightSide--product {
+	position: relative;
+}
+
+.nav__rightSide--product p {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 25%;
+	right: 25%;
+	padding: 2px;
+	font-size: 14px;
+	border-radius: 50%;
+	background-color: orange;
 }
 
 .nav__rightSide i {
@@ -153,6 +187,7 @@ img:hover {
 .header {
 	display: flex;
 	width: 100vw;
+	height: 100%;
 	max-height: 1200px;
 }
 
@@ -173,4 +208,183 @@ img:hover {
 .header_rightSide--down {
 	display: flex;
 	width: 50%;
+}
+
+/* PROFILE USER */
+
+.container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.container__profile {
+	position: relative;
+	flex-direction: column;
+	display: flex;
+	padding: 30px;
+	align-items: center;
+	width: 100%;
+	max-width: 750px;
+	height: 550px;
+	background-color: #fff;
+	z-index: 9999;
+}
+
+.container__profile--close {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	background-color: #ffa500;
+	font-size: 30px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.container__profile--title {
+	height: 150px;
+	font-size: 30px;
+	color: #4a4a4a;
+	font-weight: bold;
+}
+
+.container__inputs {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.container__inputsLeft {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	padding: 0 15px;
+}
+
+.container__inputsLeft--txt,
+.container__inputsRight--txt {
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.container__inputsLeft--labelEmail,
+.container__inputsLeft--labelPassword {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 5px 0;
+}
+
+.container__inputsLeft--email,
+.container__inputsLeft--password {
+	width: 100%;
+	height: 50px;
+	border: 1px solid #bababa;
+	padding: 20px;
+}
+
+.container__inputsLeft--email:focus,
+.container__inputsLeft--password:focus {
+	outline: 1px solid orange;
+}
+
+.container__inputsLeft--btn,
+.container__inputsRight--btn {
+	height: 40px;
+	width: 100%;
+	margin: 20px 0;
+	background-color: #ffa500;
+	border: none;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	transition: color 0.5s, background-color 0.5s;
+	cursor: pointer;
+}
+
+.container__inputsLeft--btn:hover,
+.container__inputsRight--btn:hover {
+	color: #ffa500;
+	background-color: #4a4a4a;
+}
+
+.container__inputsRight {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding: 0 15px;
+}
+
+/* LOCALSTORAGE */
+.hideCookie {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.cookie__box {
+	border-top: 5px solid orange;
+	position: fixed;
+	bottom: 0;
+	padding: 2em;
+	height: 200px;
+	width: 100%;
+	text-align: center;
+	font-size: 2rem;
+	background-color: #fff;
+	opacity: 0;
+	transform: translateY(100%);
+	animation: show-cookies 0.5s 10s forwards;
+	z-index: 99999;
+}
+
+.cookie__box::before {
+	content: '';
+	position: absolute;
+	top: -187px;
+	right: 50px;
+	width: 100%;
+	max-width: 400px;
+	height: 100%;
+	max-height: 400px;
+	z-index: -1;
+	background-image: url('images/cookie.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.cookie__box--btn {
+	margin-top: 2em;
+	padding: 0.5em 1em;
+	font-size: 1.8rem;
+	border: none;
+	border-radius: 3px;
+	color: #000;
+	background-color: #ffa500;
+	transition: background-color 0.5s, color 0.5s;
+	cursor: pointer;
+}
+.cookie__box--btn:hover {
+	color: #fff;
+	background-color: #000;
+}
+
+@keyframes show-cookies {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
