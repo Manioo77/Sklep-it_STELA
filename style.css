@@ -44,6 +44,7 @@ img:hover {
 .advertisement {
 	position: relative;
 	width: 100%;
+	z-index: 9999;
 	background-color: #82ae68;
 }
 
@@ -70,6 +71,116 @@ img:hover {
 
 .advertisement__closeBtn:hover {
 	color: #fff;
+}
+
+/* shopContainer */
+
+.shopContainer {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 99999;
+}
+
+.shopContainer__cart {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	right: -500px;
+	width: 25%;
+	height: 100%;
+	background-color: #fefefe;
+}
+
+.shopContainer__cart--show {
+	right: 0;
+}
+
+.shopContainer--show {
+	display: block;
+}
+
+.shopContainer__cart--up {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	max-width: 500px;
+	height: 100%;
+	max-height: 100px;
+}
+
+.shopContainer__cart--up p {
+	font-size: 20px;
+	letter-spacing: 3px;
+}
+
+.shopContainer__cart--up button {
+	font-size: 30px;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 20px;
+}
+
+.shopContainer__cart--mid {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.shopContainer__cart--mid button {
+	width: 80%;
+	height: 40px;
+	font-weight: bold;
+	margin: 20px 0;
+	background-color: #ffa500;
+	border: none;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	transition: color 0.5s, background-color 0.5s;
+	cursor: pointer;
+}
+
+.shopContainer__cart--mid button:hover {
+	color: #ffa500;
+	background-color: #4a4a4a;
+}
+
+.shopContainer__cart--mid img {
+	cursor: auto;
+}
+
+.shopContainer__cart--down {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 40px;
+	width: 100%;
+	max-width: 500px;
+	height: 100%;
+	max-height: 100px;
+}
+
+.shopContainer__title {
+	margin: 40px 0;
+	font-size: 20px;
+	padding-left: 10px;
+}
+
+.img__shoes {
+	display: block;
+	width: 100%;
+	height: 100px;
+	max-width: 150px;
+}
+
+.description__shoes {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 14px;
 }
 
 /* NAV */
@@ -144,10 +255,10 @@ img:hover {
 }
 
 .nav__rightSide {
-	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 	width: 90%;
 	max-width: 800px;
 }
@@ -157,12 +268,12 @@ img:hover {
 }
 
 .nav__rightSide--product p {
-	width: 20px;
-	height: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: absolute;
+	width: 20px;
+	height: 20px;
 	top: 25%;
 	right: 25%;
 	padding: 2px;
@@ -180,6 +291,37 @@ img:hover {
 
 .nav__rightSide i:hover {
 	color: orange;
+}
+
+.nav__input {
+	display: flex;
+	justify-content: space-around;
+}
+
+.nav__input--search {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	padding: 30px;
+	transition: top 1s, opacity 0.3s;
+	opacity: 0;
+	font-size: 2.4em;
+	z-index: -1;
+	border: none;
+	background-color: #fbf8f5;
+}
+
+.nav__input--search:focus {
+	outline: transparent;
+}
+
+.showInputSearch,
+.nav__input--closeBtn {
+	top: 100px;
+	opacity: 1;
+	z-index: 1;
 }
 
 /* HEADER */
